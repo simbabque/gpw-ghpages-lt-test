@@ -1,0 +1,22 @@
+name: CI to Github Pages
+
+on:
+  push:
+    branches:
+      - master
+    workflow_dispatch:
+
+jobs:
+  create-events-json:
+    environment: perl
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create output folder
+        run: mkdir gh-pages
+      - name: Build Website
+        run: perl bin/build.pl >gh-pages/index.html
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          branch: gh-pages
+          folder: gh-pages
