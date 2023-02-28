@@ -11,6 +11,8 @@ jobs:
     environment: perl
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
       - name: Create output folder
         run: mkdir gh-pages
       - name: Build Website
