@@ -20,7 +20,7 @@ jobs:
       - name: Build Website
         run: perl bin/build.pl >gh-pages/index.html
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: gh-pages
