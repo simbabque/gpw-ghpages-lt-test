@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   build-and-deploy:
+    environment: perl
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
