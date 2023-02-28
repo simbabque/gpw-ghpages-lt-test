@@ -10,7 +10,6 @@ permissions:
 
 jobs:
   build-and-deploy:
-    environment: perl
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -20,7 +19,7 @@ jobs:
       - name: Build Website
         run: perl bin/build.pl >gh-pages/index.html
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4`
         with:
           branch: gh-pages
           folder: gh-pages
